@@ -1,90 +1,89 @@
 {
-    "Cats":[
-        {
-            "name":"Moogly",
-            "race":"Persan",
-            "age":"6"
-        },
-        {
-            "name":"Rusty",
-            "race":"Bengal",
-            "age":"11"
-        }
-    ],
-    "Cars":[
-        {
-            "brand":"Mercedes",
-            "countryOfBirth":"Germany",
-            "maxSpeed":"220",
-            "speeds":"130"
-        },
-        {
-            "brand":"Ouigo",
-            "countryOfBirth":"Mars",
-            "maxSpeed":"45",
-            "speeds":"30"
-        }
-    ],
-    "Persons":[
-        {
-            "firstname":"Manu",
-            "lastname":"Moncon",
-            "salary":"12500",
-            "numberOfChildren":"0"
-        },
-        {
-            "firstname":"Stewart",
-            "lastname":"Endive",
-            "salary":"2150",
-            "numberOfChildren":"3"
-        },
-        {
-            "firstname":"Viviette",
-            "lastname":"Endive",
-            "salary":"1750",
-            "numberOfChildren":"4"
-        }
-    ],
-    "Actors":[
-        {
-            "name":"Martin Freeman",
-            "filmsPlayed":[
-                "H2G2",
-                "Love Actually",
-                "Cargo"
-            ]
-        },{
-            "name":"Elijah Wood",
-            "filmsPlayed":[
-                "Le Seigneur des anneaux",
-                "Deep Impact"
-            ]
-        }
-    ],
-    "Films":[
-        {
-            "mainActors":[
-                "Martin Freeman",
-                "Ian Holm",
-                "Orson Bean"
-            ],
-            "dateOfRelease":"Sun Jan 01 00:00:00 CET 2012"
-        },
-        {
-            "mainActors":[
-                "Ian McKellenn",
-                "Martin Freeman",
-                "Richard Armitage"
-            ],
-            "dateOfRelease":"Sun Feb 03 00:00:00 CET 2013"
-        },
-        {
-            "mainActors":[
-                "Richard Armitage",
-                "Luke Evans",
-                "Evangeline Lilly"
-            ],
-            "dateOfRelease":"Sat Apr 05 00:00:00 CEST 2014"
-        }
-    ]
+"Cats":[
+{
+"name":"Moogly",
+"race":"Persan",
+"age":"6"
+},
+{
+"name":"Rusty",
+"race":"Bengal",
+"age":"11"
+}
+],
+"Cars":[
+{
+"brand":"Mercedes",
+"countryOfBirth":"Germany",
+"maxSpeed":"220",
+"speeds":"130"
+},
+{
+"brand":"Ouigo",
+"countryOfBirth":"Mars",
+"maxSpeed":"45",
+"speeds":"30"
+}
+],
+"Persons":[
+{
+"firstname":"Manu",
+"lastname":"Moncon",
+"salary":"12500",
+"numberOfChildren":"0"
+},
+{
+"firstname":"Stewart",
+"lastname":"Endive",
+"salary":"2150",
+"numberOfChildren":"3"
+},
+{
+"firstname":"Viviette",
+"lastname":"Endive",
+"salary":"1750",
+"numberOfChildren":"4"
+}
+],
+"Actors":[
+{
+"name":"Martin Freeman",
+"filmsPlayed":[
+"H2G2",
+"Love Actually",
+"Cargo"
+]
+},{
+"name":"Elijah Wood",
+"filmsPlayed":[
+"Le Seigneur des anneaux",
+"Deep Impact"
+]
+}
+],
+"Films":[
+{
+"mainActors":[
+"Martin Freeman",
+"Ian Holm",
+"Orson Bean"
+],
+"dateOfRelease":"Sun Jan 01 00:00:00 CET 2012"
+},
+{
+"mainActors":[
+"Ian McKellenn",
+"Martin Freeman",
+"Richard Armitage"
+],
+"dateOfRelease":"Sun Feb 03 00:00:00 CET 2013"
+},
+{
+"mainActors":[
+"Richard Armitage",
+"Luke Evans",
+"Evangeline Lilly"
+],
+"dateOfRelease":"Sat Apr 05 00:00:00 CEST 2014"
+}]
 }

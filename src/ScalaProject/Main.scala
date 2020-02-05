@@ -10,7 +10,7 @@ object Main {
   // This variable is used to display more information.
   // 0 : program execution without dev details
   // 1 : program execution with dev details and explanation
-  val devDisplays = 1
+  val devDisplays = 0
 
   case class Cat(name: String, race: String, age: Int)
   case class Person(firstName: String, lastName: String, salary: Int, numberOfChildren: Int)
@@ -19,8 +19,7 @@ object Main {
   case class Actor(name: String, filmsPlayed: Seq[String])
 
 
-  def findTypeFromIndex(stringList: List[List[String]], index: Int): Array[Int] ={
-    val currList = stringList(index)
+  def findTypeFromIndex(currList: List[String]): Array[Int] ={
     if(devDisplays == 1) {
       println(currList.size + " fields in " + currList)
     }
@@ -179,7 +178,7 @@ object Main {
     }
     jsonContent += "]\n}"
 
-    println(jsonContent)
+    //println(jsonContent)
     return jsonContent
   }
 
@@ -215,9 +214,42 @@ object Main {
       println("\nIndexes in the List of List are opposite to reality, a function 'processIndex' has been designed to process inputs.")
     }
 
-    println("\nPlease write a value from 0 to " + (lines.size-2) + ", we'll find the type of this line.")
-    val indexSelected = processIndex(lines.size, scala.io.StdIn.readInt())
-    findTypeFromIndex(lines, indexSelected)
+
+    //println("\nPlease write a value from 0 to " + (lines.size-2) + ", we'll find the type of this line.")
+    //val indexSelected = processIndex(lines.size, scala.io.StdIn.readInt())
+    //findTypeFromIndex(lines(indexSelected))
+
+    println("Please write an object following this syntax :")
+    println("'attributeA;attributeB;attC0,attC1,attC2', from 2 to 4 attributes, list or not.")
+    val customLine = scala.io.StdIn.readLine()
+    if(customLine.contains(";")){
+      val list: List[String] = customLine.split(";").toList
+      val customAttributes: Array[Int] = findTypeFromIndex(list)
+      val customTypeIs = createObject(list, customAttributes)
+      customTypeIs match {
+        case "cat" => println("Custom Cat found !")
+          println("Name : " + list(0) + "\nRace : " + list(1) + "\nAge : " + list(2))
+
+        case "car" => println("Custom Car found !")
+          println("Brand : " + list(0) + "\nCountryOfBirth : " + list(1) + "\nMaxSpeed : " + list(2) + "\nSpeeds : " + list(3))
+
+        case "person" => println("Custom Person found !")
+          println("Firstname : " + list(0) + "\nLastname : " + list(1) + "\nSalary : " + list(2) + "\nNumberOfChildren : " + list(3))
+
+        case "actor" => println("Custom Actor found !")
+          println("Name : " + list(0) + "\nFilmsPlayed : " + list(1))
+
+        case "film" => println("Custom Film found !")
+          println("MainActors : " + list(0) + "\nDateOfRelease : " + list(1))
+
+        case "undefined" => println("Custom Undefined found...")
+          for(a <- 0 to list.size-1){
+            println("Attribute " + a + " : " + list(a))
+          }
+      }
+    } else {
+      println("Only one attribute is not enough. Type is undefined by default.")
+    }
 
     var catArray: List[Cat] = List()
     var carArray: List[Car] = List()
@@ -229,7 +261,7 @@ object Main {
     println("\n\nAnd now to every lines....")
     for(a <- 0 to lines.size-2){
       println("\n\nLine " + a + " of the list :")
-      val lineAttributes: Array[Int] = findTypeFromIndex(lines, a)
+      val lineAttributes: Array[Int] = findTypeFromIndex(lines(a))
       println("----------------------------------")
       val typeIs = createObject(lines(a), lineAttributes)
       typeIs match {
@@ -261,7 +293,7 @@ object Main {
       }
     }
 
-    println("We now have :")
+    println("\nInput CSV file have :")
     println("- " + catArray.length + " cats.")
     println("- " + carArray.length + " cars.")
     println("- " + actorArray.length + " actors.")
