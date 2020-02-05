@@ -2,6 +2,7 @@
 
 ## Project features
 Please open the project as being a Scala project in IntelliJ IDE. The features offered by the project can be used threw IntelliJ's terminal.
+All the code of the project is in the file Main.scala, you can find it in src/ScalaProject.
 
 ## Resources used
 The CSV file used as first input of the project is in the folder CSVs.
